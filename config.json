@@ -1,0 +1,90 @@
+{
+  "seed": 42,
+  
+  "dataset": {
+    "data_root": "./",
+    "dataset_name": "example_data",
+    "_comment": "Microglia dataset"
+  },
+
+  "model": {
+    "in_features": 9,
+    "channels": 256,
+    "pe_dim": 32,
+    "layers": 4,
+    "heads": 4,
+    "dropout": 0.1,
+    "attn_dropout": 0.5,
+
+    "_comment_topo": "Topological branch",
+    "topo_channels": 256
+  },
+
+  "branch_level": {
+    "_comment": "Branch-level attention",
+    "max_level": 20
+  },
+
+  "topological": {
+    "_comment": "Topological features",
+    "resolution": 100,
+    "soma_node_id": 0,
+    "bandwidth": 1.0,
+    "power": 1.0,
+    "normalization": true
+  },
+
+  "augment": {
+    "_comment": "The soma and its direct neighbors are protected; scale=0 disables the operation",
+    "keep_nodes": 500,
+    "drop_branch": 20,
+    "soma_id": 0,
+    "rotate": false,
+    "jitter_scale": 0.5,
+    "trans_scale_1": 0,
+    "trans_scale_2": 0,
+    "flip": true,
+    "flip_prob": 0.5
+  },
+
+  "loss_weights": {
+    "_comment": "Structural and topological branch loss weights",
+    "struct": 0.5,
+    "topo": 0.5
+  },
+
+  "swav": {
+    "_comment": "SwAV settings",
+    "nmb_prototypes": 30,
+    "temperature": 0.1,
+    "epsilon": 0.05,
+    "sinkhorn_iterations": 3,
+    "freeze_prototypes_steps": 200
+  },
+
+  "train": {
+    "_comment": "Step-based training",
+    "batch_size": 100,
+    "total_steps": 3000,
+    "lr_struct": 0.0003,
+    "lr_topo": 0.005,
+    "warmup_steps": 1000,
+    "min_lr_ratio": 0.01,
+    "weight_decay": 1e-5,
+    "val_interval": 3000,
+    "checkpoint_freq": 100,
+    "log_interval": 10
+  },
+
+  "use_amp": true,
+
+  "loader": {
+    "_comment": "Data loading",
+    "num_workers": 0,
+    "pin_memory": false,
+    "persistent_workers": false,
+    "prefetch_factor": 0
+  },
+
+  "checkpoint_dir": "./checkpoints"
+}

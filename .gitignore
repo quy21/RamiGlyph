@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments and editors
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+
+# Data and generated artifacts
+Sigert_Lab_data/
+data/
+processed/
+checkpoints/
+outputs/
+results/
+bootstrap_results/
+morphology_score_results/
+*.pt
+*.pth
+*.pth.tar
+!morphology_score_artifacts/reference/best_checkpoint.pt
+*.log
+training_log_*.csv
+
+# Evaluation outputs
+*_results.txt
+*_confusion_matrix.png
+*_tsne.png
+*_umap.png
+*_summary.txt

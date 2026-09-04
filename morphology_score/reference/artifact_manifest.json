@@ -1,0 +1,44 @@
+{
+  "format_version": 2,
+  "method": "fixed_reference_principal_curve_projection",
+  "embedding_dim": 512,
+  "pca_components": 50,
+  "trajectory_dimensions": 15,
+  "score_range": [0.0, 1.0],
+  "score_interpretation": {
+    "0": "simple branching morphology",
+    "1": "complex branching morphology"
+  },
+  "reference_residual_p99": 35.67654958318847,
+  "reference_checkpoint": {
+    "sha256": "a4aafe4c9d67782aabf8f8dbc64090aaa957fef53236f65fedb9baaf1aa431d2",
+    "step": 2828
+  },
+  "required_config": {
+    "model": {
+      "in_features": 9,
+      "channels": 256,
+      "pe_dim": 32,
+      "layers": 4,
+      "heads": 4,
+      "dropout": 0.1,
+      "attn_dropout": 0.5,
+      "topo_channels": 256
+    },
+    "branch_level": {
+      "max_level": 20
+    },
+    "topological": {
+      "resolution": 100,
+      "soma_node_id": 0,
+      "bandwidth": 1.0,
+      "power": 1.0,
+      "normalization": true
+    }
+  },
+  "artifacts_sha256": {
+    "reference_transform.npz": "4267870657d7ef2bb794ad100792ec6c8aaaef81f21aea21b05cce037f4be0ec",
+    "reference_principal_curve.npy": "bb580f498e81df3c283ed38cf62f690214e9cac56961ef1c40dfec6644040c93",
+    "reference_curve_arclength.npy": "d91d14ef76f2974b5375c09d1b4619c6c4bfa4c54276a2c37905ee1bee5ee0c4"
+  }
+}

@@ -1,0 +1,14 @@
+gudhi
+matplotlib
+networkx
+numpy
+pandas
+scikit-learn
+scipy
+seaborn
+six
+torch
+torch-geometric
+torch-scatter
+tqdm
+umap-learn
