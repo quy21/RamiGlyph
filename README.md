@@ -60,6 +60,27 @@ Project SWC morphologies onto the RamiGlyph reference trajectory to obtain a mor
 ```bash
 python morphology_score/morthology_score.py
 ```
+
+## Cross-modal GW-OT Alignment
+
+Align morphology embeddings with scRNA-seq AUCell profiles.
+
+```bash
+python GW-OT/gw_ot_alignment.py \
+  --morphology-csv path/to/embeddings.csv \
+  --pathway-csv path/to/pathway_auc.csv \
+  --state-csv path/to/state_auc.csv \
+  --output-dir outputs/gw_ot
+```
+
+Train the morphology-based functional-state probability model.
+
+```bash
+python GW-OT/train_state_predictor.py \
+  --input-csv path/to/gw_ot_targets.csv \
+  --output-dir outputs/state_prediction
+```
+
 ## Example Data
 
 A small example SWC dataset from the Sigert Lab is provided in `example_data` for testing the pipeline and verifying the installation.

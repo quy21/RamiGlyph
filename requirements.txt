@@ -3,6 +3,7 @@ matplotlib
 networkx
 numpy
 pandas
+POT
 scikit-learn
 scipy
 seaborn
