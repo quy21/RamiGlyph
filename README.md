@@ -66,19 +66,13 @@ python morphology_score/morthology_score.py
 Align morphology embeddings with scRNA-seq AUCell profiles.
 
 ```bash
-python GW-OT/gw_ot_alignment.py \
-  --morphology-csv path/to/embeddings.csv \
-  --pathway-csv path/to/pathway_auc.csv \
-  --state-csv path/to/state_auc.csv \
-  --output-dir outputs/gw_ot
+python GW-OT/gw_ot_alignment.py 
 ```
 
 Train the morphology-based functional-state probability model.
 
 ```bash
-python GW-OT/train_state_predictor.py \
-  --input-csv path/to/gw_ot_targets.csv \
-  --output-dir outputs/state_prediction
+python GW-OT/train_state_predictor.py 
 ```
 
 ## Example Data
